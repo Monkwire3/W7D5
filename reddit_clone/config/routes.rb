@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:index, :show, :create, :new, :destroy]
   resources :subs, only: [:index, :show, :new, :create, :destroy]
-  resources :posts, only: [:index, :show, :create, :new, :destroy]
+  resources :posts, only: [:index, :show, :create, :destroy]
+  get 'posts/:sub_id/new', to: 'posts#new'
 
 end

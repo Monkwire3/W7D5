@@ -1,6 +1,7 @@
 <%= render 'layouts/header' %>
 <h1><%=@sub.title%></h1>
 
+<a href="/posts/<%=@sub.id%>/new">Create Post</a>
 
 
 <% @sub.posts.each do |post| %>

@@ -11,22 +11,24 @@ class PostsController < ApplicationController
 
     def new
         @post = Post.new
+        @sub_id = params[:sub_id]
         render :new
     end
 
     def create
 
-#        @post = Post.new(title: params[:post][:title], body: params[:post][:body], sub: params[:post][:sub], poster: @current_user)
+        @post = Post.new(title: post_params[:title], body: post_params[:body], poster: current_user, sub: Sub.find_by(id: post_params[:sub_id]))
 
-        #if @post.save!
-            #redirect_to posts_url
-        #else
-            #flash.now[:errors] = "Failed to create post"
-        #end
+        debugger
+        if @post.save!
+            redirect_to post_url(@post.id)
+        else
+            flash.new[:errors] = ["Failed to Create Post"]
+        end
     end
 
     def post_params
-        params.require(:post).permit(:title, :body)
-        
+        params.require(:post).permit(:title, :body, :sub_id)
     end
+
 end

@@ -1,0 +1,25 @@
+nav {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.signed-in-links {
+    display: flex;
+    align-items: center;
+}
+    
+.signed-in-links form {
+    margin-left: 10px;
+}

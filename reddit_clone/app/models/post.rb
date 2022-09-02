@@ -13,7 +13,6 @@
 #
 class Post < ApplicationRecord
     validates :title, presence: true
-    validates :url, presence: true, uniqueness: true
 
     belongs_to :poster,
         foreign_key: :poster_id,

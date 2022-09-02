@@ -1,7 +1,7 @@
 <%= render 'layouts/header' %>
 <h1><%=@post.title%></h1>
 <p><%=@post.body%></p>
-<h4>Posted by <%=@post.poster.username%> in <%=@post.sub.title%></h4>
+<h4>Posted by <a href="<%=user_url(@post.poster.id)%>"><%=@post.poster.username%></a> in <a href="<%=sub_url(@post.sub.id)%>"><%=@post.sub.title%></a></h4>
 <h3>Comments:</h3>
 
 

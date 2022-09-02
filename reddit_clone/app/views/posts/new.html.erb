@@ -2,6 +2,7 @@
 <h1>Create Post</h1>
 <form action="<%=posts_url%>" method="POST">
 <input type="hidden" name="authenticity-token" id="" value="<%=form_authenticity_token%>">
+<input type="hidden" name="post[sub_id]" id="" value="<%=params[:sub_id]%>">
 <label for="title-input">
 <input type="text" name="post[title]" id="title-input" value="<%=@post.title%>">
 </label>

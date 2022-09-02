@@ -1,6 +1,13 @@
-<nav><a href="<%=users_url%>">All Users</a> <a href="<%=posts_url%>">All Posts</a> <a href="<%=subs_url%>">All Subs</a>
+<nav>
+<div class='nav-links'>
+<a href="<%=users_url%>">All Users</a>
+<a href="<%=posts_url%>">All Posts</a>
+<a href="<%=subs_url%>">All Subs</a>
+</div>
+
 <% if current_user != nil %>
-    <div><span>Logged in as <%= current_user.username %>
+    <div class='signed-in-links'>
+    <span>Logged in as <%= current_user.username %></span>
     <form action="<%= session_url %>" method="DELETE">
     <input type="hidden" name="method" value="DELETE">
     <input type="hidden" name="authenticity-token" value="<%= @form_authenticity_token%>">
@@ -8,7 +15,9 @@
     </form>
     </div>
 <% else %>
-    <div><a href="<%=new_session_url%>">Log In</a></div>
-    <div><a href="<%=new_user_url%>">Create User</a></div>
+    <div class='sign-in-links'>
+    <a href="<%=new_session_url%>">Log In</a></div>
+    <a href="<%=new_user_url%>">Create User</a></div>
+    </div>
 <% end %>
 </nav>
