@@ -1,0 +1,11 @@
+<%= render 'layouts/header' %>
+
+
+<h1>All Users</h1>
+
+
+<% @users.each do |user| %>
+    <div class="user-box">
+        <a href="<%=users_url%>/<%=user.id%>"><span class='username'><%=user.username%></span></a>
+    </div>
+<% end%>

@@ -1,0 +1,12 @@
+<%= render 'layouts/header' %>
+<h1>Create a New User</h1>
+<form action="<%=users_url%>" method="POST">
+<input type="hidden" name="validity-token" id="" value="<%=@form_validity_token%>">
+<label for="username-input">
+<input type="text" name="user[username]" id="username-input" placeholder="Username" value="<%=@user.username%>">
+</label>
+<label for="password-input">
+<input type="password" name="user[password]" id="password-input" placeholder="password" value="">
+</label>
+<input type="submit" name="" id="" value="Create User">
+</form>
