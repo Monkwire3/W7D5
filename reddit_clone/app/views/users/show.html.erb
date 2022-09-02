@@ -1,2 +1,15 @@
 <%= render 'layouts/header' %>
-<h1>User's Show Page for user: <%=@user.username%></h1>
+<h1><%=@user.username%>'s Page</h1>
+<h2>Moderated Subs:</h2>
+<% @user.subs.each do |sub| %>
+    <div class='block'>
+    <a href="<%=sub_url(sub.id)%>"><h3><%=sub.title%></h3></a>
+    </div>
+<% end %>
+<h2>Posts:</h2>
+
+<% @user.posts.each do |post| %>
+    <div class='block'>
+    <a href="<%=post_url(post.id)%>"><h3><%=post.title%></h3></a>
+    </div>
+<% end %>

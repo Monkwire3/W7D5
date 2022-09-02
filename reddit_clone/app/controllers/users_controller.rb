@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         if @user.save!
             redirect_to users_url
         else
-            flash.new[:errors] = "Failed to create User"
+            flash.now[:errors] = "Failed to create User"
         end
     end
 end

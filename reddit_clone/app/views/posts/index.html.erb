@@ -1,0 +1,10 @@
+<%= render 'layouts/header' %>
+<h1>All Posts</h1>
+
+<% @posts.each do |post| %>
+    <div class='block'>
+    <a href="<%=post_url(post.id)%>"><h2><%=post.title%></h2></a>
+    <h3>Posted by: <a href="<%=user_url(post.poster.id)%>"><%=post.poster.username%></a> in <a href="<%=sub_url(post.sub.id)%>"><%=post.sub.title%></a></h3>
+    <p><%=post.body%></p>
+    </div>
+<% end %>

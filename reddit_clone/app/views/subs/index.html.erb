@@ -1,0 +1,9 @@
+<%= render 'layouts/header' %>
+<h1>All Subs</h1>
+
+<% @subs.each do |sub| %>
+    <div class='block'>
+    <a href='<%= sub_url(sub.id) %>'><h2><%=sub.title%></h2></a>
+    <h3>Moderated by <a href="<%=user_url(sub.moderator.id)%>"><%=sub.moderator.username%></h3></a>
+    </div>
+<% end %>
